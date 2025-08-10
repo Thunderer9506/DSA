@@ -2,17 +2,19 @@
 using namespace std;
 
 void uniqueValue(int arr[], int sz){
-    int temp[7];
-    for (int i = 0; i < sz; i++){
-        for (int j = 0; j < sz; j++){
-            if (i != j){
-                if (arr[i] != arr[j]){
-                    a
-                }
-                
+    for (int i = 0; i < sz; ++i) {
+        bool isUnique = true;
+        for (int j = 0; j < i; ++j) {
+            if (arr[i] == arr[j]) {
+                isUnique = false;
+                break;
             }
         }
+        if (isUnique) {
+            cout << arr[i] << " ";
+        }
     }
+    
 }
 
 int main(){
@@ -20,8 +22,5 @@ int main(){
     int sz = 7;
     uniqueValue(arr,sz);
     
-    for (int i = 0; i < sz; i++){
-        cout << arr[i] << " ";
-    }
     return 0;
 }
